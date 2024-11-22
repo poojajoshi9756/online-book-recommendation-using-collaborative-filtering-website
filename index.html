@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>BOOK Recommender System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+        .text-white{
+            color:rgb(128, 130, 134)
+        }
+    </style>
+</head>
+<body style="background-color:rgb(88, 117, 156)">
+    <nav class="navbar" style="background-color:#8e9093">
+        <a class="navbar-brand">  My Book recommender </a>
+        <ul class="nav navbar-nav" >
+            <li ><a href="/" >Home</a><style>.text-white{color: black;}</style></li>
+            <li ><a href="/recommend">Recommend</a></li>
+           
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-black" style="font-size:50px">Top 50 Books</h1>
+            </div>
+        </div>
+        <div class="row" style="color: black;">
+            {% for i in range(book_name|length) %}
+            <div class="col-md-3 d-flex align-items-stretch" style="margin-top:50px;" >
+                <div class="card">
+                    <div class="card-body text-center" style="color: black;">
+                        <!-- Adjust the image size -->
+                        <img class="card-img-top" src="{{ image[i] }}" style="width: 100px; height: 150px; ">
+                        <p class="text-black">{{ book_name[i] }}</p>
+                        <h4 class="text-black">{{ author[i] }}</h4>
+                        <h4 class="text-black">Votes - {{ votes[i] }}</h4>
+                        <h4 class="text-black">Rating - {{ rating[i] }}</h4>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+           
+  
+
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+       
+</body>
+</html>
